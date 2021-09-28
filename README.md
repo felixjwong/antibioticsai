@@ -12,7 +12,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Evidence that coronavirus superspreading is fat-tailed</h3>
+  <h3 align="center">Discovering structural classes of antibiotics with deep learning</h3>
 
   <p align="center">
     Supporting code for the paper
@@ -35,111 +35,36 @@
 <!-- ABOUT THE PROJECT -->
 ## About the Code
 
-The code in this repository allows for repeat and independent analysis of the one described in the paper "Evidence that coronavirus superspreading is fat-tailed", by Felix Wong and James J. Collins. The code requires MATLAB 2019b or later to run. 
+The code in this repository allows for repeat and independent analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed. 
 
 <!-- GETTING STARTED -->
 ## Running the code
 
-### Data files
+### Checkpoint files
 
-In the folder "SSEs", three different datasets are provided as detailed in the main text. Load any single one of them before proceeding with the analysis code below.
+In the folders "initial_checkpoints" and "final_checkpoints", there are 20 ChemProp checkpoints each corresponding to the initial and final models described in the paper.
 
-### Data analysis code
+### CSV files containing predicted hits
 
-There are a total of seven files included in the main folder:
+The two files "initial_hits.csv" and "final_hits.csv" contain a list of all the hits predicted by the initial and final models described in the main text, as represented by their SMILES strings. There are 2,668 hits in "initial_hits.csv" and 5,332 hits in "final_hits.csv". For additional information regarding the hits and their prediction scores, see the Supplementary Information of the paper. 
 
-* sspreader.m
+### Substructure analysis code
+
+In the folder "py_scripts", there are Python scripts for performing substructure grouping as detailed in the main text.
+
+* group.ipynb
 <p>
-This file is the main analysis script. It loads all the data and generates most figures and analyses shown in Fig. 1 of the main text.
-</p>
-
-* sspreader_robustness.m
-<p>
-This file performs the robustness check shown in Fig. 1H of the main text.
-</p>
-
-* merging_imputation.m
-<p>
-This file performs the robustness check shown in Fig. 1I of the main text.
-</p>
-
-* cross_comparison.m
-<p>
-This file plots the summary statistics shown in Fig. 1J,K of the main text.
-</p>
-
-* hillestimator.m
-<p>
-Auxiliary script for computing the Hill estimator. 
-</p>
-
-* pickandestimator.m
-<p>
-Auxiliary script for computing the Pickands estimator. 
-</p>
-
-* DedHestimator.m
-<p>
-Auxiliary script for computing the Dekkers-Einmahl-de Haan estimator. 
-</p>
-
-* polyparci.m
-<p>
-Auxiliary script for estimating polynomial fit confidence intervals.
-</p>
-
-* frechetmodeling.m
-<p>
-Script for modeling the maxima of samples of a Fr&eacute;chet distribution.
-</p>
-
-<p>
-<b>Please note:</b> Datasets S1 and S2 of the paper contains more details of, and references for, superspreading events.
-</p>
-
-
-### Network model of transmission code
-
-In the folder "network", there are MATLAB scripts for reproducing the network models of transmissions detailed in the main text.
-
-* graph_model.m
-<p>
-This file is the main simulation script. It generates BA or WS random graphs and runs the simulations shown in Fig. 2E,F of the main text.
-</p>
-
-* SEIR.m
-<p>
-This file simulates a well-mixed SEIR model and plots the resultant total infected curve.
-</p>
-
-* WattsStrogatz.m
-<p>
-Auxiliary script for generating a WS random graph with specified parameters.
+This file contains a notebook to implement the substructure grouping described in the main text. 
 </p>
 
 
 ### Usage
 
-To run the main analysis, simply load any one of the datasets in "SSEs", then run in MATLAB:
+The checkpoint directories can be passed directly into ChemProp to generate new predictions. For instance, for SMILES strings in a file "test.csv", run:
 ```sh
-sspreader
+chemprop_predict --test_path test.csv --checkpoint_dir "initial_checkpoints" --preds_path "test_predictions.csv" --features_generator rdkit_2d_normalized --no_features_scaling &
 ```
-Most analysis results should appear. To run robustness checks after the main analysis has been executed, run in MATLAB the relevant script, e.g., 
-```sh
-sspreader_robustness
-```
-To model removing the tails and taking the maxima of samples of a Fr&eacute;chet distribution, run in MATLAB:
-```sh
-frechetmodeling
-```
-To model simulations of a network-based model of transmission or a well-mixed SEIR model, run in MATLAB:
-```sh
-graph_model
-```
-or
-```sh
-SEIR
-```
+To run the substructure analysis, install any needed packages, execute the code in "group.ipynb".
 
 <!-- CONTACT -->
 ## Contact
