@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About the Code
 
-The code in this repository allows for repeat and independent analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed. 
+The files in this repository allow for repeat analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed. 
 
 <!-- GETTING STARTED -->
 ## Running the code
@@ -50,12 +50,7 @@ The two files "initial_hits.csv" and "final_hits.csv" contain a list of all the 
 
 ### Substructure analysis code
 
-In the folder "py_scripts", there are Python scripts for performing substructure grouping as detailed in the main text.
-
-* group.ipynb
-<p>
-This file contains a notebook to implement the substructure grouping described in the main text. 
-</p>
+"group.ipynb" is the main Python script for performing substructure grouping as detailed in the main text. This file contains a notebook to implement the grouping procedure and requires RDKit to run.
 
 
 ### Usage
@@ -64,10 +59,10 @@ The checkpoint directories can be passed directly into ChemProp to generate new 
 ```sh
 chemprop_predict --test_path test.csv --checkpoint_dir "initial_checkpoints" --preds_path "test_predictions.csv" --features_generator rdkit_2d_normalized --no_features_scaling &
 ```
-To run the substructure analysis, install any needed packages, execute the code in "group.ipynb".
+To run the substructure analysis, install any needed packages and execute the code in "group.ipynb".
 
 <!-- CONTACT -->
 ## Contact
 
-For questions or comments about this code, please reach out to felix j wong at gmail (no spaces, add domain name). 
+For questions or comments about this repository, please reach out to felix j wong at gmail (no spaces, add domain name). 
 
