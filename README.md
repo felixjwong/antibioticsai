@@ -39,6 +39,7 @@ The files in this repository allow for repeat analysis of the one described in t
 <ul>
 <li><a href="https://github.com/chemprop/chemprop">Chemprop</a> (commit 9c8ff4074bd89b93f43a21adc49b458b0cab9e7f was used)</li>
 <li><a href="https://www.rdkit.org/">RDKit</a> (version 2021.09.01)</li>
+</ul>
 
 <!-- GETTING STARTED -->
 ## Running the code
