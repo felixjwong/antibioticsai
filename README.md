@@ -38,7 +38,7 @@
 The files in this repository allow for repeat analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed, as indicated in the <i>Methods</i> section of the paper. In particular, it is important that at least the following two packages are installed:
 <ul>
 <li><a href="https://github.com/chemprop/chemprop">Chemprop</a> (commit 9c8ff4074bd89b93f43a21adc49b458b0cab9e7f was used)</li>
-<li><a href="https://www.rdkit.org/">RDKit</a> (version 2021.09.01)</li>"
+<li><a href="https://www.rdkit.org/">RDKit</a> (version 2021.09.01)</li>
 
 <!-- GETTING STARTED -->
 ## Running the code
