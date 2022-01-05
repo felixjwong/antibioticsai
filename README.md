@@ -12,7 +12,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Discovering structural classes of antibiotics with deep learning</h3>
+  <h3 align="center">Discovering structural classes of antibiotics with explainable deep learning</h3>
 
   <p align="center">
     Supporting code for the paper
@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About the Code
 
-The files in this repository allow for repeat analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed. 
+The files in this repository allow for repeat analysis of the one described in the paper "Discovering structural classes of antibiotics with deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed, as indicated in the <i>Methods</i> section of the paper. 
 
 <!-- GETTING STARTED -->
 ## Running the code
@@ -46,7 +46,7 @@ In the folders "initial_checkpoints" and "final_checkpoints", there are 20 ChemP
 
 ### CSV files containing predicted hits
 
-The two files "initial_hits.csv" and "final_hits.csv" contain a list of all the hits predicted by the initial and final models described in the main text, as represented by their SMILES strings. There are 2,668 hits in "initial_hits.csv" and 5,332 hits in "final_hits.csv". For additional information regarding the hits and their prediction scores, see the Supplementary Information of the paper. 
+The two files "initial_hits.csv" and "final_hits.csv" contain a list of all the hits predicted by the initial and final models described in the main text, as represented by their SMILES strings. There are 2,668 hits in "initial_hits.csv" and 5,332 hits in "final_hits.csv". For additional information regarding the hits and their prediction scores, please see the Supplementary Information of the paper. 
 
 ### Substructure analysis code
 
