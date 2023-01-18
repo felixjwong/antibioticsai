@@ -22,24 +22,24 @@
 
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Table of contents
 
-* [About the Code](#about-the-code)
+* [About the code](#about-the-code)
 * [Running the code](#running-the-code)
-  * [Checkpoint files](#checkpoints)
-  * [Chemprop usage and rationale calculations using Monte Carlo tree searches](#usage)
-    * [Key dependencies](#dependencies)
-    * [Training and predicting](#training)
-    * [Calculating rationales](#rationales)
-  * [Python notebook for filtering hits and computing rationale scaffolds](#notebook1)
-  * [Python notebook for maximal common substructure analyses](#notebook2)
+  * [Checkpoint files](#checkpoint-files)
+  * [Chemprop usage and rationale calculations using Monte Carlo tree searches](#chemprop-usage-and-rationale-calculations-using-monte-carlo-tree-searches)
+    * [Key dependencies](#key-dependencies)
+    * [Training and predicting](#training-and-predicting)
+    * [Calculating rationales](#calculating-rationales)
+  * [Python notebook for filtering hits and computing rationale scaffolds](#python-notebook-for-filtering-hits-and-computing-rationale-scaffolds)
+  * [Python notebook for maximal common substructure analyses](#python-notebook-for-maximal-common-substructure-analyses)
   
 * [Contact](#contact)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About the Code
+## About the code
 
 The files in this repository allow for repeat analyses of those described in the paper "Discovery of a structural class of antibiotics with explainable deep learning". The code requires <a href="https://github.com/chemprop/chemprop">ChemProp</a> and Python with the appropriate packages installed, as indicated in the <i>Methods</i> section of the paper. In particular, please ensure that at least the following two packages are installed:
 <ul>
@@ -53,7 +53,7 @@ Details on installation, the packages required, and the Jupyter notebook code pl
 
 ### Checkpoint files
 
-In the folder "final_checkpoints", there are three directories, each with 20 ChemProp checkpoints corresponding to the final trained ensembles of models used to predict antibiotic activity against <i>Staphylococcus aureus<i>, cytotoxicity against HepG2 cells, and cytotoxicity against human primary skeletal muscle cells, as described in the paper. For the convenience of users, the training datasets of 39,312 compounds are reproduced from Supplementary Dataset 1 in the "final_checkpoints" folder.
+In the folder "final_checkpoints", there are three directories, each with 20 ChemProp checkpoints corresponding to the final trained ensembles of models used to predict antibiotic activity against <i>Staphylococcus aureus</i>, cytotoxicity against HepG2 cells, and cytotoxicity against human primary skeletal muscle cells, as described in the paper. For the convenience of users, the training datasets of 39,312 compounds are reproduced from Supplementary Dataset 1 in the "final_checkpoints" folder.
 
 ### Chemprop usage and rationale calculations using Monte Carlo tree searches
 
