@@ -164,11 +164,11 @@ Dependencies for successful execution of both Python notebooks are described in 
 <li>jupyter notebook</li>
 </ul>
 
-The last command should launch the Jupyter notebook. All cells in the notebook can then be executed to reproduce the filtering and scaffold computation steps used in the paper; additional comments are provided with each cell to describe what each evaluating is performing. 
+The last command should launch the Jupyter notebook. All cells in the notebook can then be executed to reproduce the filtering and scaffold computation steps used in the paper; additional in-line comments are provided with each cell to describe what each cell evaluation is performing. 
 
 ### Python notebook for maximal common substructure analyses
 
-This notebook reproduces the maximal common substructure analyses described in Supplementary Note 2, Extended Data Figs. 4 and 5, and the <i>Methods</i> section of the paper. All cells in the notebook can be executed to reproduce the analysis. 
+This notebook reproduces the maximal common substructure analyses described in Supplementary Note 2, Extended Data Figs. 4 and 5, and the <i>Methods</i> section of the paper. All cells in the notebook can be executed to reproduce the analysis. As above, additional in-line comments are provided with each cell to describe what each cell evaluation is performing. 
 
 
 
