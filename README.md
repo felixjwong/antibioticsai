@@ -107,7 +107,7 @@ After Chemprop is activated, a Chemprop model can be trained using the following
 chemprop_train --data_path working_example/train.csv --dataset_type classification --config_path working_example/hyperparameters.json --save_dir "working_example/checkpoints" --ensemble_size 1 --features_generator rdkit_2d_normalized --no_features_scaling
 ```
 
-This will provide one model checkpoint in the folder "working_example/checkpoints". The Chemprop model will be defined using the hyperparameters in "working_example/hyperparameters.json" and trained on the data in "working_example/train.csv." The flag --dataset_type specifies binary classification, the flag --ensemble_size specifies the number of models in the ensemble, and the --features_generator and --no_features_scaling flags specifies that we would like the model to be augmented with computed RDKit features, as detailed further in the paper. For advanced details about each of these flags and additional options, see Chemprop's <a href="https://github.com/chemprop/chemprop">Official Instructions</a>.
+This will provide one model checkpoint in the folder "working_example/checkpoints". The Chemprop model will be defined using the hyperparameters in "working_example/hyperparameters.json" and trained on the data in "working_example/train.csv." The flag --dataset_type specifies binary classification, the flag --ensemble_size specifies the number of models in the ensemble, and the --features_generator and --no_features_scaling flags specify that we would like the model to be augmented with computed RDKit features, as detailed further in the paper. For advanced details about each of these flags and additional options, see Chemprop's <a href="https://github.com/chemprop/chemprop">Official Instructions</a>.
 
 ##### Predicting with Chemprop
 
@@ -117,16 +117,16 @@ After trained models are generated, any ensemble of at least one model can be us
 chemprop_predict --test_path working_example/test.csv --checkpoint_dir "working_example/checkpoints" --preds_path "working_example/test_pred.csv" --features_generator rdkit_2d_normalized --no_features_scaling 
 ```
 
-The checkpoint directory, path to the test file, and path to the output file are specified with the corresponding flags. As the model has been augmented with computed RDKit features, the two --features_generator and --no_features_scaling flags are retained. 
+The checkpoint directory, path to the test file, and path to the output file are specified using the corresponding flags. As the models have been augmented with computed RDKit features, the two --features_generator and --no_features_scaling flags are retained. 
 
 
 #### Calculating rationales
 
-Given any compound with a high prediction score ("hit"), a Monte Carlo tree search can be run on the compound in order to determine a "rationale", or substructure responsible for a threshold amount of the compound's prediction score, as follows:
+Given any compound with a high prediction score ("hit"), <a href="https://chemprop.readthedocs.io/en/latest/interpret.html">a Monte Carlo tree search can be run on the compound in order to determine a "rationale"</a>, or substructure responsible for a threshold amount of the compound's prediction score, as follows:
 ```sh
 chemprop_interpret --data_path "./hit.csv" --checkpoint_dir "working_example/checkpoints" --property_id 1 --features_generator rdkit_2d_normalized --no_features_scaling
 ```
-Here, the command finds the rationale for the compound in "hit.csv" using the checkpoints in the checkpoint directory. As the model has been augmented with computed RDKit features, the two --features_generator and --no_features_scaling flags are retained. 
+Here, the "chemprop_interpret" command finds the rationale for the compound in "hit.csv" using the models in the specified checkpoint directory. As the models have been augmented with computed RDKit features, the two --features_generator and --no_features_scaling flags are retained. 
 
 At present, editing the parameters used in the Monte Carlo tree search is not supported via the command line in Chemprop. To edit the parameters to suitable values, as described in the paper, the relevant section of Chemprop's args.py (in chemprop/) must be updated as follows:
 
