@@ -53,11 +53,11 @@ Details on installation, the packages required, and the Jupyter notebook code pl
 
 ### Checkpoint files
 
-In the folder "final_checkpoints", there are three directories, each with 20 ChemProp checkpoints corresponding to the final trained ensembles of models used to predict antibiotic activity against <i>Staphylococcus aureus</i>, cytotoxicity against HepG2 cells, and cytotoxicity against human primary skeletal muscle cells, as described in the paper. For the convenience of users, the training datasets of 39,312 compounds are reproduced from Supplementary Dataset 1 in the "final_checkpoints" folder.
+In the folder "final_checkpoints", there are seven directories, each with 20 ChemProp checkpoints corresponding to the final trained ensembles of models used to predict antibiotic activity against <i>Staphylococcus aureus</i>, cytotoxicity against HepG2 cells, cytotoxicity against human primary skeletal muscle cells, cytotoxicity against IMR-90 cells, proton motive force-altering activity in <i>Staphylococcus aureus</i>, antibiotic activity against <i>Staphylococcus aureus</i> with quinolones removed, and antibiotic activity against <i>Staphylococcus aureus</i> with β-lactams removed, as described in the paper. For the convenience of users, the training datasets (typically of 39,312 compounds) are reproduced from the Supplementary Datasets in the "final_checkpoints" folder.
 
 ### Chemprop usage and rationale calculations using Monte Carlo tree searches
 
-This section will guide readers to train their own Chemprop models using the data in the provided training datasets, thereby providing an integrated platform for interested readers to develop and apply their own Chemprop models to antibiotic  discovery. We will also discuss how to use the trained models provided in "final_checkpoints" and how to compute rationales for predicted hits. 
+This section will guide readers to train their own Chemprop models using the data in the provided training datasets, thereby providing an integrated platform for interested readers to develop and apply their own Chemprop models to antibiotic discovery. We will also discuss how to use the trained models provided in "final_checkpoints" and how to compute rationales for predicted hits. 
 
 #### Key dependencies
 
@@ -67,9 +67,9 @@ Key dependencies for this section focusing on Chemprop usage are provided in the
 <li>train.csv: A CSV file containing the SMILES strings and activity values of compounds in the training set. The default file provided is the training set of 39,312 compounds described in the main text, with activity values defined by the <i>S. aureus</i> growth inhibition activity criteria described in the main text. There are a total of 512 active (ACTIVITY=1) compounds; the remaining compounds are inactive (ACTIVITY=0).
 </li>
 <li>
-hyperparameters.json: A JSON file containing key hyperparameters specifying the architecture of the Chemprop model used. By default, the parameters used (for antibiotics) are: depth=5, dropout=0.35, ffn_num_layers=3, and hidden_size=1600, as detailed further in Extended Data Table 4 of the paper.
+hyperparameters.json: A JSON file containing key hyperparameters specifying the architecture of the Chemprop model used. By default, the parameters used (for antibiotics) are: depth=5, dropout=0.35, ffn_num_layers=3, and hidden_size=1600, as detailed further in Extended Data Table 5 of the paper.
 </li>
-<li>test.csv: A CSV file containing the SMILES strings of compounds for which Chemprop predictions of antibiotic activity will be made. The default file provided is the set of 327 procured and experimentally tested compounds in our study; this smaller subset was provided to facilitate evaluation for setups with less computational power. For larger sets of compounds computationally evaluated in the paper, please refer to Supplementary Dataset 2 of the paper. 
+<li>test.csv: A CSV file containing the SMILES strings of compounds for which Chemprop predictions of antibiotic activity will be made. The default file provided is the set of 283 procured and experimentally tested compounds in our study; this smaller subset was provided to facilitate evaluation for setups with less computational power. For larger sets of compounds computationally evaluated in the paper, please refer to Supplementary Dataset 2 of the paper. 
 </li>
 <li>hit.csv: A CSV file containing the SMILES string "CC1N(C2C=CC(F)=C(Cl)C=2)N=NC=1C(NCC1(C(=O)O)CCOCC1)=O", which has a high antibiotic prediction score of 0.409 (when using the provided trained ensemble) and a rationale, "O=C(N[CH3:1])c1nnn(-c2ccc(F)c(Cl)c2)[cH:1]1", with rationale prediction score 0.138. 
 </li>
@@ -168,7 +168,7 @@ The last command should launch the Jupyter notebook. All cells in the notebook c
 
 ### Python notebook for maximal common substructure analyses
 
-This notebook reproduces the maximal common substructure analyses described in Supplementary Note 2, Extended Data Figs. 4 and 5, and the <i>Methods</i> section of the paper. All cells in the notebook can be executed to reproduce the analysis. As above, additional in-line comments are provided with each cell to describe what each cell evaluation is performing. 
+This notebook reproduces the maximal common substructure analyses described in Supplementary Note 2, Extended Data Figs. 6 and 7, and the <i>Methods</i> section of the paper. All cells in the notebook can be executed to reproduce the analysis. As above, additional in-line comments are provided with each cell to describe what each cell evaluation is performing. 
 
 
 
