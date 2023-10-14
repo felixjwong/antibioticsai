@@ -171,6 +171,12 @@ The last command should launch the Jupyter notebook. All cells in the notebook c
 This notebook reproduces the maximal common substructure analyses described in Supplementary Note 2, Extended Data Figs. 6 and 7, and the <i>Methods</i> section of the paper. All cells in the notebook can be executed to reproduce the analysis. As above, additional in-line comments are provided with each cell to describe what each cell evaluation is performing. 
 
 
+### In silico libraries and prediction results
+
+A copy of antibiotic model predictions, using the checkpoints in "final_checkpoints/antibiotic_staph", for the Mcule purchasable database (ver. 200601) and 799,140 compounds from a Broad Institute database used in this work is available in the "library_predictions" folder. There, the SMILES string and antibiotic prediction score of each compound is provided. The databases are split over 1,128 and 8 CSV files, respectively.
+
+
+
 
 <!-- CONTACT -->
 ## Contact
